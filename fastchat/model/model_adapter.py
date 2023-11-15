@@ -22,9 +22,10 @@ from transformers import (
     AutoModelForSeq2SeqLM,
     AutoTokenizer,
     LlamaTokenizer,
-    LlamaForCausalLM,
+    # LlamaForCausalLM,
     T5Tokenizer,
 )
+from fastchat.model.llama_yarn import LlamaForCausalLM
 
 from fastchat.constants import CPU_ISA
 from fastchat.conversation import Conversation, get_conv_template
