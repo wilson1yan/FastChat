@@ -81,6 +81,7 @@ class BaseModelAdapter:
             )
         try:
             model = AutoModelForCausalLM.from_pretrained(
+            #model = LlamaForCausalLM.from_pretrained(
                 model_path,
                 low_cpu_mem_usage=True,
                 trust_remote_code=True,
@@ -105,7 +106,8 @@ class BaseModelAdapter:
         )
 
     def get_default_conv_template(self, model_path: str) -> Conversation:
-        return get_conv_template("one_shot")
+        #return get_conv_template("one_shot")
+        return get_conv_template("vicuna_v1.1")
 
 
 # A global registry for all model adapters
